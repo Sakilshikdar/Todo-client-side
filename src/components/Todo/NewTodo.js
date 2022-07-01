@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const NewTodo = () => {
     const [toggle, setToggle] = useState(true);
@@ -10,7 +11,7 @@ const NewTodo = () => {
             name: even.target.todo.value,
         }
         console.log(ratting)
-        fetch('https://gentle-scrubland-01299.herokuapp.com/newTodo', {
+        fetch('http://localhost:5000/newTodo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -20,7 +21,8 @@ const NewTodo = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-
+                    toast('todo add')
+                    even.target.reset()
                 }
                 else {
 
