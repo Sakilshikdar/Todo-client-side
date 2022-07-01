@@ -10,7 +10,7 @@ const NewTodo = () => {
             name: even.target.todo.value,
         }
         console.log(ratting)
-        fetch('http://localhost:5000/newTodo', {
+        fetch('https://gentle-scrubland-01299.herokuapp.com/newTodo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

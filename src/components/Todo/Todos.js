@@ -5,7 +5,7 @@ const Todos = () => {
     const [todos, setTodes] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://gentle-scrubland-01299.herokuapp.com/items')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

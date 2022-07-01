@@ -9,7 +9,7 @@ const TodoDetails = () => {
     const [toggle, setToggle] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/todoDetails`)
+        fetch(`https://gentle-scrubland-01299.herokuapp.com/todoDetails`)
             .then(res => res.json())
             .then(data => setTodo(data))
     }, [todo])
@@ -17,7 +17,7 @@ const TodoDetails = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://gentle-scrubland-01299.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
